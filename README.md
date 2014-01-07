@@ -1,4 +1,4 @@
-aithris
+<h4>aithris</h4>
 
 basic goal is to be able to generate syntax correct files from various markup formats.
 The programming goal is to implement things in the way they are described in the first place.
