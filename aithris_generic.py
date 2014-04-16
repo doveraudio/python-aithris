@@ -7,7 +7,7 @@ class Debugable():
     def DebugOff():
         Debug = false
 ## begin loggable
-class Loggable():
+class Loggable(Debugable):
     def __init__(self):
         self.data.clear
     data = list()
@@ -32,7 +32,7 @@ class Nameable(Valueable):
     
 ##end nameable
 # begin variable
-class Variable(Valueable):
+class Variable(Nameable):
         def __init__(self):
             self.Value = null    
             self.Type = null
@@ -41,20 +41,22 @@ class Variable(Valueable):
 
 #end variable
 ## begin Compareable
-class Compareable(Valueable):
+class Compareable(Variable):
     def __init__(self):
         self.Compared = false
     def Compare(self, term):
         self.Compared = true
         if(self.Value==term):
-            return self
+            return true
+            else
+            return false
         Compared = false
     def EndComparison(self):
         self.Compared = false
 ##End Compareable
 
 
-class Element(Loggable):
+class Element(Compareable):
         def __init__(self, begin, end):
             self.Open = begin
             self.Close = end
